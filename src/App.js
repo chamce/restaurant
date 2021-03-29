@@ -33,12 +33,14 @@ class App extends Component {
   axiosHelper(section, index) {
     let url = 'http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public';
     let this_ = this;
-    let arr;
     axios.get(url + '/api/menu/type/' + section.id)
       .then(function (response) {
         // handle success
-        arr = [...this_.state.sections];
+        let arr = [...this_.state.sections];
         arr[index].items = response.data;
+        arr[index].items.map((item, i) => {
+          item.price = ((Math.random() * (1000 - 500) + 500) / 100).toFixed(2);
+        })
         this_.setState({ sections: arr });
         window.localStorage.setItem('sections', JSON.stringify(this_.state.sections));
       })
@@ -53,7 +55,7 @@ class App extends Component {
       <>
         <div className='container text-center'>
           <div className='row'>
-            <div className='col-md-4 offset-md-4 col-sm-12'>
+            <div className='col'>
               <h1>Local Porridge</h1>
               <h6>Address: 348 E Main St, Lexington, KY</h6>
               <h6>Monday - Sunday: 12:00 pm - 9:00 pm</h6>
