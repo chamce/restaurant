@@ -1,0 +1,41 @@
+React Random Restaurant
+    Description
+        Design a menu website for a restaurant opening at 348 E Main St, Lexington, KY
+        Pick a restaurant name
+        API is populated with many possible recipes
+        Use the API to generate a sample menu
+        URL: http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public
+    MVP
+        Single page restaurant splash page with menu
+    Requirements
+        Generate restaurant name, address, and hours
+        Access API using Axios
+        Create dynamic menu
+            5 sections with unique food items
+                Breakfast, snacks, [lunch, appetizers, dinner, sides, drinks], desserts, sauces
+                1 section has 12 unique food items
+                3 sections have 8 unique food items
+                    API generates random foods, will need to ensure above conditions are met
+                    Price for each food items
+                Each section must be viewable in an organism
+                    Accordion, nav tabs
+                    Menu items must be molecules
+                        Card or list item with picture, name, and price
+            Save API results in local storage so user gets the same menu when refreshed
+            Retrieve new menu when local storage is deleted
+    
+Restaurant name: Local Porridge
+        Address: 348 E Main St, Lexington, KY
+          Hours: Monday - Sunday: 12:00 pm - 9:00 pm
+
+State
+    Appetizers
+    Lunch
+    Dinner
+    Sides
+    Drinks
+
+Food Item
+    Name
+    Price
+    Picture
